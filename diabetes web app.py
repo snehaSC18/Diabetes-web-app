@@ -12,8 +12,14 @@ from streamlit_option_menu import option_menu
 
 #new for deploying
 working_dir = os.path.dirname(os.path.abspath(__file__))
+# Construct the correct file path
+model_path = os.path.join(BASE_DIR, "trained_model.sav")
 
-loaded_model = pickle.load(open('Ctrained_model.sav','rb'))
+# Load the model
+with open(model_path, 'rb') as model_file:
+    loaded_model = pickle.load(model_file)
+
+#loaded_model = pickle.load(open('trained_model.sav','rb'))
 #creating a function for prediction
 def diabetes_prediction(input_data):
     #input_data = (4,110,92,0,0,37.6,0.191,30)
