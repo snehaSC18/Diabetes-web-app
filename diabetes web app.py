@@ -11,7 +11,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 #new for deploying
-working_dir = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Construct the correct file path
 model_path = os.path.join(BASE_DIR, "trained_model.sav")
 
